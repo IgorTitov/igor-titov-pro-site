@@ -211,7 +211,7 @@
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="">
     </div>
-
+<!--
     <div id="chat-toggle-btn">🤖 Спроси про Игоря</div>
 
     <div id="chat-widget">
@@ -227,7 +227,7 @@
             <button id="chat-send">Отправить</button>
         </div>
     </div>
-
+-->
     <script>
         // ЛАЙТБОКС
         const composite = document.getElementById('bookComposite');
@@ -265,7 +265,7 @@
         toggleBtn.onclick = () => { widget.style.display = 'flex'; toggleBtn.style.display = 'none'; };
         chatClose.onclick = () => { widget.style.display = 'none'; toggleBtn.style.display = 'flex'; };
 
-        const API_KEY = "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"; // Вставьте сюда ключ OpenRouter или DeepSeek
+        const API_KEY = "sk-or-v1-xxx"; // Вставьте сюда ключ OpenRouter или DeepSeek
 
         async function askAI() {
             const text = input.value.trim();
