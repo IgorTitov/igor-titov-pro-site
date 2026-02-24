@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NVRKH4LXF2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-NVRKH4LXF2');
+	</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function(m,e,t,r,i,k,a){
+			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106971622', 'ym');
+
+		ym(106971622, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/106971622" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игорь Титов | AI Innovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --secondary-bg: #f8f9fa;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --accent: #2c5282;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-main); background-color: var(--bg-color); scroll-behavior: smooth; }
+        
+        /* Блокировка скролла при открытом лайтбоксе */
+        body.lightbox-active { overflow: hidden; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; color: var(--accent); }
+        .nav-links a { text-decoration: none; color: var(--text-main); margin-left: 30px; font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
+        
+        section { padding: 100px 10%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; font-weight: 700; }
+
+        /* HERO */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: space-between; background: var(--secondary-bg); padding-top: 80px; }
+        .hero-text { flex: 1; padding-right: 50px; }
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 30px; }
+        
+        .hero-image { flex: 1; display: flex; justify-content: center; }
+        .hero-image div {
+            width: 400px; height: 400px; background: #eee; border-radius: 50%; overflow: hidden;
+            border: 3px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .btn { display: inline-block; padding: 15px 35px; background: var(--accent); color: var(--white); text-decoration: none; border-radius: 4px; font-weight: 600; transition: var(--transition); cursor: pointer; border: none; font-family: inherit; font-size: 1rem; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(44, 82, 130, 0.2); }
+
+        /* ЭКСПЕРТИЗА */
+        .achievements-list { list-style: none; padding-left: 20px; }
+        .achievements-list li { margin-bottom: 12px; position: relative; padding-left: 25px; color: var(--text-muted); }
+        .achievements-list li::before { content: '→'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+
+        /* КНИГА */
+        .book-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+        .book-cover-composite { position: relative; width: 100%; max-width: 320px; height: 460px; perspective: 2000px; cursor: pointer; z-index: 10; }
+        .book-cover-front, .book-cover-back {
+            position: absolute; width: 280px; height: 400px;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 2px 8px 8px 2px; overflow: hidden; background: #fff;
+        }
+        .book-cover-front img, .book-cover-back img { width: 100%; height: 100%; object-fit: contain; background: #fff; display: block; }
+        .book-cover-back { top: 0; left: 0; z-index: 1; transform: rotate(-5deg); filter: brightness(0.85); }
+        .book-cover-front { top: 25px; left: 35px; z-index: 2; transform: rotate(5deg); }
+
+        /* ЛАЙТБОКС */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        #lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 50px; cursor: pointer; opacity: 0.7; }
+
+        /* ЧАТ */
+        #chat-toggle-btn {
+            position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white;
+            padding: 15px 25px; border-radius: 30px; box-shadow: 0 10px 25px rgba(44, 82, 130, 0.3);
+            cursor: pointer; z-index: 1001; font-weight: 600; display: flex; align-items: center; gap: 10px;
+        }
+        #chat-widget {
+            position: fixed; bottom: 90px; right: 30px; width: 380px; height: 500px; background: white;
+            border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 1000;
+            display: none; flex-direction: column; overflow: hidden; border: 1px solid #e2e8f0;
+        }
+        #chat-header { background: var(--accent); color: white; padding: 15px 20px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        #chat-messages { flex: 1; overflow-y: auto; padding: 20px; background: #f8fafc; font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px; }
+        .message { padding: 12px 16px; border-radius: 12px; line-height: 1.5; max-width: 85%; }
+        .message.bot { background: white; border: 1px solid #e2e8f0; align-self: flex-start; border-bottom-left-radius: 2px; }
+        .message.user { background: var(--accent); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        #chat-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; background: white; }
+        #chat-input { flex: 1; padding: 10px 15px; border: 1px solid #cbd5e1; border-radius: 20px; outline: none; }
+        #chat-send { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-left: 10px; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; height: auto; padding: 120px 5% 60px; text-align: center; }
+            .hero-text { padding-right: 0; margin-top: 40px; }
+            .hero-image div { width: 300px; height: 300px; }
+            .book-grid { grid-template-columns: 1fr; text-align: center; }
+            .book-cover-composite { margin: 0 auto; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ИГОРЬ ТИТОВ</div>
+        <div class="nav-links">
+            <a href="#home">Главная</a>
+            <a href="#about">Обо мне</a>
+            <a href="#achievements">Экспертиза</a>
+            <a href="#book">Книга</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div class="hero-text">
+                    <h1>AI Engineering на пути к сингулярности</h1>
+                    <p>Помогаю внедрять ИИ в продуктовую разработку. Автор книги «Лакмус юркости в эпоху ИИ». Исследователь в области ИИ.</p>
+                    <a href="#contact" class="btn">Обсудить проект</a>
+                </div>
+                <div class="hero-image">
+                    <div><img src="IgorTitov.jpeg" alt="Игорь Титов"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <p style="max-width: 800px; font-size: 1.1rem; color: var(--text-muted);">
+                Отлично понимаю, что AGI не будет основан на LLM и GPU. Точно знаю, что для этого нам будут необходимы нейроморфные архитектуры и прорыв в электронике. Тем не менее, верю в то, что у систем на LLM ещё довольно много пространства для улучшения и они нас ещё несколько раз приятно удивят...
+				Сейчас специализируюсь на внедрении инноваций в области ИИ, опираясь на глубокий инженерный бэкграунд и  бизнес-подход. Помимо AI Engineering, мой опыт включает работу в CERN, National Instruments, EPFL и управление сложными технологическими проектами.
+            </p>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2>Ключевая экспертиза</h2>
+            <ul class="achievements-list">
+                <li>Автор BookTwin — инструмента создания "двойников" книг для LLM.</li>
+                <li>Разработчик структуры данных ISSL для language-based reasoning по изображениям.</li>
+                <li>Автор 2 международных патентных заявок (PCT) в области <strong>LLM reasoning</strong> и мультимодального AI.</li>              
+				<li>Автор фреймворка управления изменениями Change Balance.</li>
+				<li>Founder & ex-CTO в Labicom, founder & ex-CEO в VFP Soft.</li>
+				<li>Член комитета стандартизации IEEE (рабочая группа стандарта <a href="https://sagroups.ieee.org/edusc/members/" rel="noopener noreferrer" target="_blank">IEEE 1876</a>)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="book">
+        <div class="container">
+            <div class="book-grid">
+                <div class="book-cover-composite" id="bookComposite">
+                    <div class="book-cover-back"><img src="back_cover.jpg"></div>
+                    <div class="book-cover-front"><img src="front_cover.jpg"></div>
+                </div>
+                <div class="book-info">
+                    <h2>Моя книга</h2>
+                    <h3 style="margin-bottom: 20px; color: var(--accent);">«Лакмус юркости в эпоху ИИ»</h3>
+                    <p>Как сделать так, чтобы организация активно внедряющая ИИ в продуктовую разработку и стремящаяся стать AI-naitve, всё-таки смогла это сделать? Ответ вас удивит. Вы осознаете, почему юркость не достигается внедрением Скрама и что делать, чтобы ИИ контролируемо усиливал организацию и ускорял обратную связь, а не множил и бетонировал хаос. Книга для руководителей, техлидов и агентов изменений, отвечающих за внедрение ИИ, качество, скорость и устойчивость IT-продукта.</p>
+					<button class="btn" style="background: #e2e8f0; color: #2d3748;" onclick="window.open('http://лакмус-юркости.рф', '_blank')">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>Контакты</h2>
+            <p style="margin-bottom: 40px;">Готовы к сотрудничеству? Напишите мне.</p>
+            <a href="mailto:igor.ev.titov@gmail.com" class="btn">Написать письмо</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; border-top: 1px solid #eee;">
+            <p>&copy; 2026 Игорь Титов. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <div id="chat-toggle-btn">🤖 Спроси про Игоря</div>
+
+    <div id="chat-widget">
+        <div id="chat-header">
+            <span>ИИ-представитель Игоря</span>
+            <span id="chat-close" style="cursor:pointer; font-size: 1.5rem;">&times;</span>
+        </div>
+        <div id="chat-messages">
+            <div class="message bot">Здравствуйте! Я облачный ИИ-представитель Игоря Титова. Если отвечу странно, то свяжитесь с Игорем напрямую, и простите меня за галлюцинации:)</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Задать вопрос...">
+            <button id="chat-send">Отправить</button>
+        </div>
+    </div>
+
+    <script>
+        // ЛАЙТБОКС
+        const composite = document.getElementById('bookComposite');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const frontImg = document.querySelector('.book-cover-front img');
+        const backImg = document.querySelector('.book-cover-back img');
+
+        composite.onclick = () => {
+            lightboxImg.src = frontImg.src;
+            lightbox.classList.add('active');
+            document.body.classList.add('lightbox-active');
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('lightbox-active');
+            setTimeout(() => {
+                const tmp = frontImg.src;
+                frontImg.src = backImg.src;
+                backImg.src = tmp;
+            }, 300);
+        };
+        document.getElementById('lightbox-close').onclick = closeLightbox;
+        lightbox.onclick = (e) => { if(e.target === lightbox) closeLightbox(); };
+
+        // ЧАТ ЛОГИКА (DeepSeek API)
+        const toggleBtn = document.getElementById('chat-toggle-btn');
+        const widget = document.getElementById('chat-widget');
+        const chatClose = document.getElementById('chat-close');
+        const input = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('chat-send');
+        const messagesCont = document.getElementById('chat-messages');
+
+        toggleBtn.onclick = () => { widget.style.display = 'flex'; toggleBtn.style.display = 'none'; };
+        chatClose.onclick = () => { widget.style.display = 'none'; toggleBtn.style.display = 'flex'; };
+
+        const API_KEY = "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"; // Вставьте сюда ключ OpenRouter или DeepSeek
+
+        async function askAI() {
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMsg(text, 'user');
+            input.value = '';
+            const loadingMsg = addMsg('Думаю...', 'bot');
+
+			const systemPrompt = `Ты цифровой представитель Игоря Титова. Твои ответы должны основываться ТОЛЬКО на этих фактах:
+				- Игорь Титов: инженер-практик, AI-исследователь. Готов консультировать в AI-assisted и AI-driven разработке, в AI Engineering и Deep Tech Innovations. 
+				- Образование: МГТУ им. Н.Э. Баумана, BMSTU (Радиоэлектроника и лазерная техника (Radioelectronics and Laser Engineering)); Ecole polytechnique fédérale de Lausanne, EPFL (Plasma Physics).
+				- Сертификации релевантные для направления AI: Certified AI Solution Architect, Customer Experience Professional, Professional Scrum Product Owner, Certified LabVIEW Architect, Certified LabVIEW Developer.
+				- Языки: русский (родной), английский (C1), французский (A2).
+				- В аспирантуре МГТУ им. Баумана делает научную работу на стыке технологии, педагогики и когнитивной эргономике про совместную работу профессионалов и ИИ.
+				- Достижения в области ИИ: Автор BookTwin для создания графовых двойников книг для LLM. Разработчик ISSL и Persistent Semantic Image Representation для reasoning по картинкам. 
+				- Интеллектуальная собственность: 2 патента PCT в области LLM reasoning и мультимодального ИИ.
+				- Бизнес: Основатель VFP Soft, ex-CTO Labicom. Член комитета IEEE (стандарт 1876). Invited Trainer в National Instruments.
+				- Книга: «Лакмус юркости в эпоху ИИ» о юркости продуктовой разработки в командах людей и ИИ.
+				- Опыт: CERN, EPFL CRPP, EPFL LA, Бауманка, National Instruments, Штутгартский университет, Labicom. Делал real-time и робототехнические системы, distributed experimental platforms, LLM- и knowledge-based AI-системы. Опыт в корпорациях: руководитель проектов, IT лидер направления, Agile-коуч. Соавтор стандарта IEEE 1876.
+				Отвечай профессионально, кратко, на языке вопроса. Если не знаешь ответа, предложи связаться с Игорем по почте.
+			Отвечай строго по фактам, кратко и профессионально.`;
+
+            try {
+                const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${API_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "model": "deepseek/deepseek-chat",
+                        "messages": [
+                            {"role": "system", "content": "Ты представитель Игоря Титова, эксперта по AI. Отвечай кратко."},
+                            {"role": "user", "content": text}
+                        ]
+                    })
+                });
+                const data = await response.json();
+                loadingMsg.textContent = data.choices[0].message.content;
+            } catch (e) {
+                loadingMsg.textContent = "Ошибка связи с сервером.";
+            }
+        }
+
+        function addMsg(txt, side) {
+            const d = document.createElement('div');
+            d.className = `message ${side}`;
+            d.textContent = txt;
+            messagesCont.appendChild(d);
+            messagesCont.scrollTop = messagesCont.scrollHeight;
+            return d;
+        }
+
+        sendBtn.onclick = askAI;
+        input.onkeypress = (e) => { if(e.key === 'Enter') askAI(); };
+    </script>
+</body>
+</html>
