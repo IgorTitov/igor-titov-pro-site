@@ -299,7 +299,7 @@
                     body: JSON.stringify({
                         "model": "deepseek/deepseek-chat",
                         "messages": [
-                            {"role": "system", "content": "Ты представитель Игоря Титова, эксперта по AI. Отвечай кратко."},
+                            {"role": "system", "content": systemPrompt},
                             {"role": "user", "content": text}
                         ]
                     })
